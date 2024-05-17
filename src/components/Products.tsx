@@ -1,11 +1,30 @@
-import { getProducts } from "@/api/productsAPI";
-import { useQuery } from "@tanstack/react-query";
+import { deleteProduct, editProduct, getProducts } from "@/api/productsAPI";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "./ui/button";
 
 function Products() {
   const { data, isError, isLoading, error } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
+  });
+
+  const queryClient = useQueryClient();
+
+  const deleteProductMutation = useMutation({
+    mutationFn: deleteProduct,
+    onSuccess: () => {
+      console.log("Producto eliminado con exito");
+      queryClient.invalidateQueries("products");
+    },
+  });
+
+  const editStockProductMutation = useMutation({
+    mutationFn: editProduct,
+    onSuccess: () => {
+      console.log("inStock product edit");
+
+      queryClient.invalidateQueries("products");
+    },
   });
 
   if (isLoading) return <div>Loading...</div>;
@@ -24,8 +43,25 @@ function Products() {
         alt={product.name}
       />
 
-      <Button>Delete</Button>
-      <input type="checkbox" />
+      <Button
+        onClick={(e) => {
+          e.preventDefault();
+          deleteProductMutation.mutate(product.id);
+        }}
+      >
+        Delete
+      </Button>
+      <input
+        type="checkbox"
+        checked={product.inStock}
+        onChange={(e) => {
+          e.preventDefault();
+          editStockProductMutation.mutate({
+            ...product,
+            inStock: e.target.checked,
+          });
+        }}
+      />
       <label htmlFor="">In Stock</label>
     </li>
   ));

@@ -1,46 +1,27 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
-      "description": "Industry-leading noise cancellation, exceptional sound quality, and comfortable all-day wear make these headphones a top choice.",
-      "price": 399,
-      "category": "Electronics",
-      "image": "https://m.media-amazon.com/images/I/61vJtKbAssL._AC_SL1500_.jpg",
+      "id": "c301",
+      "name": "producto1",
+      "description": "este es el producto 1",
+      "category": "home",
+      "price": "50000",
+      "inStock": true
+    },
+    {
+      "id": "b527",
+      "name": "producto2",
+      "description": "este es el producto 2",
+      "category": "electronics",
+      "price": "50000",
       "inStock": false
     },
     {
-      "id": "2",
-      "name": "Apple iPhone 13 Pro Max",
-      "description": "The latest flagship smartphone from Apple, featuring a powerful A15 Bionic chip, a stunning Super Retina XDR display, and an incredible camera system.",
-      "price": 1099,
-      "category": "Electronics",
-      "image": "https://m.media-amazon.com/images/I/51UtM-A3fdL._AC_SL1000_.jpg",
-      "inStock": true
-    },
-    {
-      "id": "3",
-      "name": "Google Pixel 6 Pro",
-      "description": "A powerful and unique smartphone from Google, featuring a custom-designed Tensor chip, a vibrant AMOLED display, and innovative camera features.",
-      "price": 899,
-      "category": "Electronics",
-      "image": "https://m.media-amazon.com/images/I/716n8eAia+L._AC_UF894,1000_QL80_.jpg",
-      "inStock": true
-    },
-    {
-      "id": "6e59",
-      "name": "teclado",
-      "description": "este es un teclado gamming",
-      "category": "electronics",
-      "price": "100",
-      "inStock": true
-    },
-    {
-      "id": "4811",
-      "name": "mouse",
-      "description": "este es un mouse gamming",
-      "category": "electronics",
-      "price": "99",
+      "id": "ff85",
+      "name": "producto3",
+      "description": "este es el producto 3",
+      "category": "textil",
+      "price": "50000",
       "inStock": true
     }
   ]
